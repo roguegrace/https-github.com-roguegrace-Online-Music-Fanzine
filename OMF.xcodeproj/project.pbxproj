@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		501BAD7BE5B933FBAE44DD7B /* Pods_OMF.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8CC994B825D4614203EEEF /* Pods_OMF.framework */; };
 		92BC81FA27CEC4FF00EBBDAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC81F927CEC4FF00EBBDAE /* AppDelegate.swift */; };
 		92BC81FC27CEC4FF00EBBDAE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC81FB27CEC4FF00EBBDAE /* SceneDelegate.swift */; };
 		92BC81FE27CEC4FF00EBBDAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC81FD27CEC4FF00EBBDAE /* ViewController.swift */; };
@@ -17,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4948E6F5723EFBA7BA77BEAC /* Pods-OMF.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OMF.release.xcconfig"; path = "Target Support Files/Pods-OMF/Pods-OMF.release.xcconfig"; sourceTree = "<group>"; };
+		8677BDCE70CF6D0D8F0A6A83 /* Pods-OMF.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OMF.debug.xcconfig"; path = "Target Support Files/Pods-OMF/Pods-OMF.debug.xcconfig"; sourceTree = "<group>"; };
+		8F8CC994B825D4614203EEEF /* Pods_OMF.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OMF.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92BC81F627CEC4FF00EBBDAE /* OMF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OMF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92BC81F927CEC4FF00EBBDAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92BC81FB27CEC4FF00EBBDAE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,17 +37,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				501BAD7BE5B933FBAE44DD7B /* Pods_OMF.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55F27C920A3CABACF837EDEC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8677BDCE70CF6D0D8F0A6A83 /* Pods-OMF.debug.xcconfig */,
+				4948E6F5723EFBA7BA77BEAC /* Pods-OMF.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		92BC81ED27CEC4FF00EBBDAE = {
 			isa = PBXGroup;
 			children = (
 				92BC81F827CEC4FF00EBBDAE /* OMF */,
 				92BC81F727CEC4FF00EBBDAE /* Products */,
+				55F27C920A3CABACF837EDEC /* Pods */,
+				EB1261A37D297BBC59EF43FA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +87,14 @@
 			path = OMF;
 			sourceTree = "<group>";
 		};
+		EB1261A37D297BBC59EF43FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8F8CC994B825D4614203EEEF /* Pods_OMF.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92BC820D27CEC50000EBBDAE /* Build configuration list for PBXNativeTarget "OMF" */;
 			buildPhases = (
+				41DCBBAAFFB3981609C07405 /* [CP] Check Pods Manifest.lock */,
 				92BC81F227CEC4FF00EBBDAE /* Sources */,
 				92BC81F327CEC4FF00EBBDAE /* Frameworks */,
 				92BC81F427CEC4FF00EBBDAE /* Resources */,
+				717A33BE93C8D782D8D1D2AA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,6 +162,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		41DCBBAAFFB3981609C07405 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OMF-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		717A33BE93C8D782D8D1D2AA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OMF/Pods-OMF-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OMF/Pods-OMF-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OMF/Pods-OMF-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		92BC81F227CEC4FF00EBBDAE /* Sources */ = {
@@ -288,6 +357,7 @@
 		};
 		92BC820E27CEC50000EBBDAE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8677BDCE70CF6D0D8F0A6A83 /* Pods-OMF.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -296,11 +366,14 @@
 				DEVELOPMENT_TEAM = KBMRSFFG4P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OMF/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Fanzine;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,12 +383,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		92BC820F27CEC50000EBBDAE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4948E6F5723EFBA7BA77BEAC /* Pods-OMF.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -324,11 +398,14 @@
 				DEVELOPMENT_TEAM = KBMRSFFG4P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OMF/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Fanzine;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -338,7 +415,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
